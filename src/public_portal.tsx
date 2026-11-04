@@ -12,44 +12,12 @@ const FILTERS = [
   'Seasonal',
 ]
 
-const NAV = ['Browse', 'Collections', 'Submit Photos', 'Request a Photo']
-
 export default function PublicPortal() {
   const [search, setSearch] = useState('')
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
-  const [activeNav, setActiveNav] = useState('Browse')
 
   return (
     <div className="portal">
-      {/* Header */}
-      <header className="header">
-        <div className="header-top">
-          <div className="brand">
-            <div className="brand-logo">FPG</div>
-            <div>
-              <div className="brand-name">Friends of the Public Garden</div>
-              <div className="brand-sub">Photo Library Portal</div>
-            </div>
-          </div>
-          <span className="header-mode">Public Portal</span>
-        </div>
-
-        <div className="nav">
-          {NAV.map(label => (
-            <button
-              key={label}
-              onClick={() => setActiveNav(label)}
-              className={activeNav === label ? 'nav-pill active' : 'nav-pill'}
-            >
-              {label}
-            </button>
-          ))}
-          <div className="nav-spacer">
-            <button className="nav-pill staff">→ Staff Login</button>
-          </div>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="hero">
         <h1 className="hero-title">
