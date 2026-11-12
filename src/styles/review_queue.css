@@ -1,0 +1,260 @@
+/* ---------- Review queue (photo detail / tag review) ---------- */
+.review {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 88px);
+  background-color: var(--cream);
+}
+
+/* Photo preview */
+.review-preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: var(--ink);
+}
+
+.review-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 672px;
+}
+
+.review-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.review-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #f5a623;
+  color: #3d2800;
+}
+
+/* Metadata panel */
+.review-panel {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--parchment);
+  border-left: 1px solid var(--border);
+}
+
+.review-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.review-title {
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.review-file {
+  font-size: 12px;
+  color: var(--taupe);
+}
+
+.review-heading {
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.review-meta-key {
+  color: var(--taupe);
+}
+
+.review-meta-value {
+  max-width: 160px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: right;
+  color: var(--ink);
+}
+
+.review-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-tag-input {
+  width: 100%;
+  margin-top: 16px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  background-color: var(--warm-white);
+}
+
+.review-tag-input:focus {
+  border-color: var(--forest-mid);
+}
+
+/* AI suggestions */
+.review-ai-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.review-ai-heading .review-heading {
+  margin-bottom: 0;
+}
+
+.review-ai-badge {
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  background-color: rgba(74, 130, 48, 0.15);
+  color: var(--forest-mid);
+}
+
+.review-ai-tag {
+  padding: 0;
+  background: none;
+  border: none;
+  transition: opacity 0.15s;
+}
+
+.review-ai-tag.accepted {
+  opacity: 0.4;
+}
+
+.review-ai-note {
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--taupe);
+}
+
+/* Actions */
+.review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.review-confirm {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  background-color: var(--forest);
+  color: var(--cream);
+  transition: all 0.15s;
+}
+
+.review-confirm:hover {
+  opacity: 0.9;
+}
+
+.review-confirm.confirmed {
+  background-color: var(--forest-light);
+}
+
+.review-public {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: var(--cream-mid);
+  border: 1px solid var(--border);
+}
+
+.review-public-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.review-public-text {
+  font-size: 10px;
+  color: var(--taupe);
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--cream-dark);
+  transition: background-color 0.15s;
+}
+
+.toggle.on {
+  background-color: var(--forest-mid);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: left 0.15s;
+}
+
+.toggle.on .toggle-knob {
+  left: 22px;
+}
+
+.review-share {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 10px;
+  word-break: break-all;
+  background-color: rgba(74, 130, 48, 0.08);
+  color: var(--forest-mid);
+  border: 1px solid var(--sage-light);
+}
+
+.review-share-label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 700;
+}

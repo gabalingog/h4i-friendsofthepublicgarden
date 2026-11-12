@@ -1,0 +1,39 @@
+/* ---------- Tag chip ---------- */
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--sage-light);
+  color: var(--forest);
+  border: 1px solid var(--sage-light);
+}
+
+.tag-chip.ai {
+  background-color: rgba(74, 130, 48, 0.15);
+  color: var(--forest-mid);
+  border-color: transparent;
+}
+
+.tag-chip.public {
+  background-color: var(--cream-mid);
+  color: var(--moss);
+  border-color: var(--cream-mid);
+}
+
+.tag-chip-remove {
+  margin-left: 2px;
+  padding: 0;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: inherit;
+  opacity: 0.6;
+}
+
+.tag-chip-remove:hover {
+  opacity: 1;
+}
