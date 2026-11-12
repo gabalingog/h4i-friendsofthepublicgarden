@@ -6,6 +6,7 @@ import PublicPortal from './public_portal'
 import Collections from './collections'
 import Upload from './upload'
 import ReviewQueue from './review_queue'
+import StaffBrowse from './staff_browse'
 import ComingSoon from './coming_soon'
 import { isStaffView, type View } from './navigation'
 
@@ -23,13 +24,13 @@ export default function App() {
 
         <main className="app-main">
           {/* Public portal */}
-          {view === 'browse' && <PublicPortal />}
+          {view === 'browse' && <PublicPortal onNavigate={setView} />}
           {view === 'collections' && <Collections onNavigate={setView} />}
           {view === 'submit' && <ComingSoon title="Submit Photos" />}
           {view === 'request' && <ComingSoon title="Request a Photo" />}
 
           {/* Staff portal */}
-          {view === 'staff-dashboard' && <ComingSoon title="Staff Dashboard" />}
+          {view === 'staff-dashboard' && <StaffBrowse onNavigate={setView} />}
           {view === 'upload' && <Upload />}
           {view === 'review-queue' && <ReviewQueue />}
           {view === 'staff-collections' && <Collections onNavigate={setView} />}

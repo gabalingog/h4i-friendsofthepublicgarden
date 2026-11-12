@@ -45,3 +45,20 @@ export const COLLECTIONS: Collection[] = [
 export function unsplashUrl(id: string, w: number, h: number) {
   return `https://images.unsplash.com/${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`
 }
+
+// Tags staff can filter by on the staff Browse page.
+export const ALL_TAGS = ['swan-boats', 'wildlife', 'flowers', 'statues', 'people', 'seasonal', 'water', 'monuments', 'birds', 'winter', 'spring', 'autumn', 'summer', 'frog-pond', 'lagoon', 'trees', 'panorama']
+
+// Friendly filter names on the public Browse page, and the photo tags each one covers.
+export const PUBLIC_TAG_FILTERS: Record<string, string[]> = {
+  People: ['people', 'families', 'skating'],
+  'Animals & Wildlife': ['wildlife', 'animals', 'swans', 'hawk'],
+  'Plants & Flowers': ['flowers', 'roses', 'garden', 'tulips', 'trees', 'willows'],
+  'Park Scenes': ['panorama', 'overview', 'garden', 'trees', 'frog-pond'],
+  'Statues & Monuments': ['statues', 'monuments', 'landmarks', 'bronze'],
+  Birds: ['birds', 'hawk', 'swans'],
+  'Water & Lagoon': ['water', 'lagoon', 'swan-boats'],
+  Seasonal: ['seasonal', 'spring', 'summer', 'autumn', 'winter'],
+}
+
+export const PUBLIC_TAGS = Object.keys(PUBLIC_TAG_FILTERS)
